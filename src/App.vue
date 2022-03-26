@@ -1,30 +1,52 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div>
+    <div class="container">
+      <h1 class="heading">WLL's Todo Manager</h1>
+      <AddTodo />
+      <FilterTodos />
+      <Todos />
+    </div>
+  </div>
 </template>
 
+<script>
+import Todos from './components/Todos.vue';
+import AddTodo from './components/AddTodo.vue';
+import FilterTodos from './components/FilterTodos.vue';
+
+export default {
+  name: 'App',
+  components: {
+    Todos,
+    AddTodo,
+    FilterTodos,
+  },
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --color-primary: #39aea9;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  line-height: 1.6;
+  background: #ebf3cb;
+  font-size: 1.6rem;
+}
+.heading {
+  font-size: 3.5rem;
   text-align: center;
-  color: #2c3e50;
+  color: #557b83;
 }
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.container {
+  max-width: 110rem;
+  margin: auto;
+  overflow: auto;
+  padding: 0 2rem;
 }
 </style>
